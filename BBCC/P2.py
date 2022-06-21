@@ -10,10 +10,10 @@ if pos_max == -1:  # 當第一支柱子都走不過，位罝依然為-1時輸出
 else:
     for pos in range(0, pos_max+1):  # 對所有能到達的柱子
         target, visible, mid = pos, pos, []  # target+1為要判定的柱子index,visible為可視範圍,mid是當前柱子和判定柱子之間的柱子列表
-        while target <= n-2 and pill[pos][0] >= pill[target+1][0]:  # 當pos_t在尾2格或之前且其下一柱子比當前柱子矮時
+        while target <= n-2 and pill[pos][0] >= pill[target+1][0]:  # 當target+1在n-1柱子內且其下一柱子比當前柱子矮時進入判定
             mid.append(pill[target+1])  # mid是當前柱子和判定柱子之間的柱子列表(不包含當前柱子但包含判定柱子)
             if pill[target+1] == max(list(mid[j] for j in range(len(mid))), key=lambda x: x[0]):  # 當判定的柱子是mid中最高時
-                visible = target + 1  # 可以看到index為target的柱子
+                visible = target + 1  # 可以看到index為target+1的柱子
             target += 1  # 判定下一根柱子
         ans.append(visible + 1)  # python index由0開始，輸出時要+1
     print(max(ans))
