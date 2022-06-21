@@ -1,6 +1,5 @@
 n, k = map(int, input().split())
-pill, pos_max = [], -1  # 初始位置不在木樁上，定義為-1
-ans = []
+pill, ans, pos_max = [], [], -1  # 初始位置不在木樁上，定義為-1
 for i in range(n):
     pill.append(list(map(int, input().split())))  # 把柱子# 的高度和消耗體力值存在pill列表中
 while pos_max <= n-2 and k >= pill[pos_max + 1][1]:  # 在倒數第2支柱子或之前，剩餘體力大於下一柱子體力值時能向前走
