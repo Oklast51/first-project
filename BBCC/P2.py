@@ -15,5 +15,5 @@ else:
             if pill[target+1] == max(list(mid[j] for j in range(len(mid))), key=lambda x: x[0]):  # 當判定的柱子是mid中最高時
                 visible = target + 1  # 可以看到index為target+1的柱子
             target += 1  # 判定下一根柱子
-        ans.append(visible + 1)  # python index由0開始，輸出時要+1
+        ans.append(visible + 1)  # python index由0開始，所以要+1
     print(max(ans))
